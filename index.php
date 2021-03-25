@@ -10,19 +10,24 @@ $nomJoueur2 = "Marion"; //Chaine de caractères
 $ageJoueur2 = 30; //nombre
 $estUnHommeJoueur2 = false;
 
-separateur();
+separateur("-");
 echo "</br>";
 afficherJoueur($nomJoueur1,$ageJoueur1,$estUnHommeJoueur1);// Dans les parenthèses, nous allons rappeler les variables que les informations ci-dessous utiliseront. Si les varibles ne sont pas rappelé lorsque l'on utilise la fonction. Cela ne fonctionnera pas.
 echo "</br>";
-separateur();
+separateur("-");
 echo "</br>";
 afficherJoueur($nomJoueur2,$ageJoueur2,$estUnHommeJoueur2);
 echo "</br>";
-separateur();
+separateur("-");
 echo "</br>";
-afficherLeJoueurLePlusAge($nomJoueur1,$ageJoueur1,$nomJoueur1, $nomJoueur2);
+afficherLeJoueurLePlusAge($ageJoueur1,$ageJoueur2,$nomJoueur1, $nomJoueur2);
 echo "</br>";
-separateur();
+separateur("-");
+echo "</br>";
+$differenceAge = calculDifferenceAge($ageJoueur1,$ageJoueur2);
+echo "La différence d'age est de : ".$differenceAge;
+echo "</br>";
+separateur("-");
 
 function afficherJoueur($nom,$age,$homme) { // Dans les parenthèses on déclare les informations que l'on va utiliser dans la fonction.
     
@@ -49,9 +54,21 @@ function afficherLeJoueurLePlusAge($ageJoueur1,$ageJoueur2,$nomJ1,$nomJ2) {
 
 }
 
-function separateur(){
+function calculDifferenceAge($ageJoueur1,$ageJoueur2){
+    $resultat = $ageJoueur1 - $ageJoueur2;
+
+    if($resultat < 0){ // Ce if veut dire que si le resultat est inférieur à 0, alors il doit le rebasculer en positif.
+        $resultat = -$resultat;
+    }
+    return $resultat;
+}
+
+function separateur($separateur){
     echo "</br>";
-    echo "-------------------------";
+    for($i = 0; $i < 20; $i++){
+        echo $separateur;
+    }
+    
     echo "</br>";
 }
 

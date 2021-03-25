@@ -1,33 +1,44 @@
 <?php
+//On défini une constante, une constante par convention s'ecrit en majuscule.
+define("SEPARATEUR","-");
 
 //Note :
 //Bien penser à chaque point virgule à chaque fois qu'on termine une commande.
 $nomJoueur1 = "Jeremy"; //Chaine de caractères
-$ageJoueur1 = 28; //nombre
+$ageJoueur1 = 17; //nombre
 $estUnHommeJoueur1 = true; // Booléen
 
 $nomJoueur2 = "Marion"; //Chaine de caractères
-$ageJoueur2 = 30; //nombre
+$ageJoueur2 = 22; //nombre
 $estUnHommeJoueur2 = false;
 
-separateur("-");
+
+separateur(SEPARATEUR);
 echo "</br>";
 afficherJoueur($nomJoueur1,$ageJoueur1,$estUnHommeJoueur1);// Dans les parenthèses, nous allons rappeler les variables que les informations ci-dessous utiliseront. Si les varibles ne sont pas rappelé lorsque l'on utilise la fonction. Cela ne fonctionnera pas.
 echo "</br>";
-separateur("-");
+separateur(SEPARATEUR);
 echo "</br>";
 afficherJoueur($nomJoueur2,$ageJoueur2,$estUnHommeJoueur2);
 echo "</br>";
-separateur("-");
+separateur(SEPARATEUR);
 echo "</br>";
 afficherLeJoueurLePlusAge($ageJoueur1,$ageJoueur2,$nomJoueur1, $nomJoueur2);
 echo "</br>";
-separateur("-");
+separateur(SEPARATEUR);
 echo "</br>";
 $differenceAge = calculDifferenceAge($ageJoueur1,$ageJoueur2);
 echo "La différence d'age est de : ".$differenceAge;
 echo "</br>";
-separateur("-");
+separateur(SEPARATEUR);
+echo "</br>";
+afficheMajeur($ageJoueur1);
+echo "</br>";
+separateur(SEPARATEUR);
+echo "</br>";
+afficheMajeur($ageJoueur2);
+echo "</br>";
+separateur(SEPARATEUR);
 
 function afficherJoueur($nom,$age,$homme) { // Dans les parenthèses on déclare les informations que l'on va utiliser dans la fonction.
     
@@ -70,6 +81,15 @@ function separateur($separateur){
     }
     
     echo "</br>";
+}
+
+function afficheMajeur($age){
+    if($age > 18){
+        echo "Le joueur est majeur";
+    }
+    else {
+        echo "Le joueur est mineur";
+    }
 }
 
 ?>

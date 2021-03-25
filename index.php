@@ -10,36 +10,49 @@ $nomJoueur2 = "Marion"; //Chaine de caractères
 $ageJoueur2 = 30; //nombre
 $estUnHommeJoueur2 = false;
 
-echo test();
+separateur();
 echo "</br>";
-
 afficherJoueur($nomJoueur1,$ageJoueur1,$estUnHommeJoueur1);// Dans les parenthèses, nous allons rappeler les variables que les informations ci-dessous utiliseront. Si les varibles ne sont pas rappelé lorsque l'on utilise la fonction. Cela ne fonctionnera pas.
 echo "</br>";
+separateur();
 echo "</br>";
 afficherJoueur($nomJoueur2,$ageJoueur2,$estUnHommeJoueur2);
+echo "</br>";
+separateur();
+echo "</br>";
+afficherLeJoueurLePlusAge($nomJoueur1,$ageJoueur1,$nomJoueur1, $nomJoueur2);
+echo "</br>";
+separateur();
 
 function afficherJoueur($nom,$age,$homme) { // Dans les parenthèses on déclare les informations que l'on va utiliser dans la fonction.
     
-    echo "NOM DU JOUEUR1 : ". $nom;
+    echo "NOM DU JOUEUR : ". $nom;
     echo "</br>";
-    echo "AGE DU JOUEUR 1 :". $age;
-    $age = $age + 1; //C'est une assignation
+    echo "AGE DU JOUEUR :". $age;
     echo "</br>";
-    echo "AGE DU JOUEUR 1 :". $age;
-    echo "</br>";
+    
 
-    if($homme === true){
+    if($homme){
         echo "C'est un homme";
     } else {
         echo "C'est une femme";
     }
 }
 
-function test() {
-    $a = 5;
-    $b = 20;
+function afficherLeJoueurLePlusAge($ageJoueur1,$ageJoueur2,$nomJ1,$nomJ2) {
+    
+    if($ageJoueur1 > $ageJoueur2){
+        echo $nomJ1 . " est plus agé(e) que " .$nomJ2;
+    } else {
+        echo $nomJ2 . " est plus agé(e) que " .$nomJ1;
+    }
 
-    return $a + $b;
+}
+
+function separateur(){
+    echo "</br>";
+    echo "-------------------------";
+    echo "</br>";
 }
 
 ?>
